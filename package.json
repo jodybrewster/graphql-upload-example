@@ -1,0 +1,15 @@
+{
+  "name": "graphql-upload-example",
+  "version": "1.0.0",
+  "repository": "git@github.com:jodybrewster/graphql-upload-example.git",
+  "author": "Jody Brewster <jodybrewster@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "setup": "yarn install && cd server && yarn install && cd ../client && yarn install",
+    "start": "concurrently --kill-others 'cd server && yarn start' 'cd client && yarn start'",
+    "test": "cd server && yarn test && cd .."
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2"
+  }
+}

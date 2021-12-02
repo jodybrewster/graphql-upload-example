@@ -1,0 +1,25 @@
+scalar Upload
+
+type File {
+  id: ID!
+  filename: String!
+  mimetype: String!
+  encoding: String!
+}
+
+type WordCount {
+  word: String
+  count: Int
+}
+
+type Output {
+  frequencies: [WordCount]
+}
+  
+extend type Query {
+  uploads: [File]
+}
+
+extend type Mutation {
+  uploadFile(file: Upload!, min: Int, max: Int): Output
+}
